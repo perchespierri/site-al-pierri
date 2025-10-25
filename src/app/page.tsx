@@ -1,6 +1,7 @@
 'use client';
 
 import Footer from '@/components/Footer/Footer';
+import Header from '@/components/Header/Header';
 import { useState } from 'react';
 
 export default function Home() {
@@ -11,11 +12,23 @@ export default function Home() {
     message: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-    alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
-    setFormData({ name: '', email: '', phone: '', message: '' });
+const handleSubmit = (e: React.FormEvent) => {
+  e.preventDefault();
+
+  const { name, email, phone, message } = formData;
+
+  const text = `
+  Olá! Me chamo ${name}.
+  E-mail: ${email}
+  Telefone: ${phone}
+
+  ${message}
+    `.trim();
+
+    const whatsappNumber = '5516997114630';
+    const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
+
+    window.open(url, '_blank');
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -27,29 +40,7 @@ export default function Home() {
 
   return (
     <>
-      <header>
-        <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b border-slate-200" aria-label="Menu principal">
-          <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
-              Engenharia Logística
-            </div>
-            <ul className="hidden md:flex gap-8" role="menubar">
-              <li role="none">
-                <a href="#sobre" className="text-slate-700 hover:text-blue-600 transition-colors cursor-pointer" role="menuitem">Sobre</a>
-              </li>
-              <li role="none">
-                <a href="#servicos" className="text-slate-700 hover:text-blue-600 transition-colors cursor-pointer" role="menuitem">Serviços</a>
-              </li>
-              <li role="none">
-                <a href="#experiencia" className="text-slate-700 hover:text-blue-600 transition-colors cursor-pointer" role="menuitem">Experiência</a>
-              </li>
-              <li role="none">
-                <a href="#contato" className="text-slate-700 hover:text-blue-600 transition-colors cursor-pointer" role="menuitem">Contato</a>
-              </li>
-            </ul>
-          </div>
-        </nav>
-      </header>
+      <Header />
 
       <main className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
         <section className="pt-32 pb-20 px-6" aria-labelledby="hero-title">
@@ -362,15 +353,15 @@ export default function Home() {
                   <div>
                     <div className="text-blue-600 text-2xl mb-2" aria-hidden="true">📧</div>
                     <p className="text-sm text-slate-500 mb-1">E-mail</p>
-                    <a href="mailto:contato@exemplo.com" className="text-slate-700 font-semibold hover:text-blue-600 transition-colors">
-                      contato@exemplo.com
+                    <a href="mailto:apierri@uol.com.br" className="text-slate-700 font-semibold hover:text-blue-600 transition-colors">
+                      apierri@uol.com.br
                     </a>
                   </div>
                   <div>
                     <div className="text-blue-600 text-2xl mb-2" aria-hidden="true">📱</div>
                     <p className="text-sm text-slate-500 mb-1">Telefone</p>
                     <a href="tel:+5500000000000" className="text-slate-700 font-semibold hover:text-blue-600 transition-colors">
-                      (00) 00000-0000
+                      (16) 99711-4630
                     </a>
                   </div>
                   <div>

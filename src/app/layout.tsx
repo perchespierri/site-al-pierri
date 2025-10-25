@@ -52,7 +52,7 @@ const jsonLd = {
   description: 'Consultoria especializada em logística, supply chain e engenharia de produção',
   url: 'https://seudominio.com',
   telephone: '+55-00-00000-0000',
-  email: 'contato@exemplo.com',
+  email: 'apierri@uol.com.br',
   address: {
     '@type': 'PostalAddress',
     addressLocality: 'Araraquara',

@@ -238,12 +238,12 @@ export default function Home() {
             <div className="space-y-8">
               <article className="border-l-4 border-blue-600 pl-8 py-4">
                 <header className="flex flex-col md:flex-row md:justify-between md:items-start mb-2">
-                  <h3 className="text-2xl font-bold text-slate-900">Logística</h3>
+                  <h3 className="text-2xl font-bold text-slate-900">Gerente de Logística</h3>
                   <time className="text-slate-500 font-semibold" dateTime="2017/presente">2017 – presente</time>
                 </header>
                 <p className="text-blue-600 font-semibold mb-3">Villa Fonte</p>
                 <p className="text-slate-700 leading-relaxed">
-                  Encarregado da logística da empresa Villa Fonte, fornecedora de água mineral na região de Araraquara-SP.
+                  Gerente de logística da empresa Villa Fonte, fornecedora de água mineral na região de Araraquara-SP.
                 </p>
               </article>
 
